@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "YouLearnOnly",
+    "version": "1.0",
+    "description": "Only allows informative YouTube videos",
+    "permissions": [
+      "scripting",
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "*://*.youtube.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/image.png",
+        "48": "images/image.png",
+        "128": "images/image.png"
+      }
+    }
+}
