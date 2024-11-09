@@ -26,6 +26,8 @@ The model was trained on a custom dataset of YouTube video titles, achieving imp
 
 ### 1. Backend Setup
 
+```bash
+
 # Clone the repository
 git clone https://github.com/yourusername/youlearnonly.git
 
@@ -34,6 +36,7 @@ cd youlearnonly
 
 # Start the Docker container
 docker-compose up -d
+```
 
 
 ### 2. Chrome Extension Installation
@@ -44,6 +47,7 @@ docker-compose up -d
 
 ## Project Structure
 
+```
 youlearnonly/
 ├── backend/
 │   ├── app.py           # Flask API
@@ -57,6 +61,8 @@ youlearnonly/
 │   └── popup.js
 ├── model/              # Trained BERT model files
 └── docker-compose.yml
+```
+
 
 
 ## How It Works
