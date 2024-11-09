@@ -6,7 +6,8 @@
     "permissions": [
       "scripting",
       "tabs",
-      "storage"
+      "storage",
+      "http://localhost:5001/"
     ],
     "host_permissions": [
       "*://*.youtube.com/*"

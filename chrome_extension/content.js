@@ -5,9 +5,23 @@ function getVideoTitle() {
     return title;
 }
 
-// Function to mock prediction 
-function mockPredictTitle(title) {
-    return "Entertainment";
+// Update the mockPredictTitle function to use the real API
+async function predictTitle(title) {
+    try {
+        const response = await fetch('http://localhost:5001/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title })
+        });
+        
+        const data = await response.json();
+        return data.prediction;
+    } catch (error) {
+        console.error('Error predicting title:', error);
+        return 'Error';
+    }
 }
 
 // Function to block the video
@@ -57,12 +71,12 @@ function blockVideo() {
     }, 100);
 }
 
-// Function to check video and block if necessary
-function checkAndBlockVideo() {
+// Update the existing function to use the new predictTitle
+async function checkAndBlockVideo() {
     const title = getVideoTitle();
     if (title) {
         console.log('Video title:', title);
-        const prediction = mockPredictTitle(title);
+        const prediction = await predictTitle(title);
         console.log('Prediction:', prediction);
         if (prediction === "Entertainment") {
             blockVideo();
