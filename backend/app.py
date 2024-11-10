@@ -9,7 +9,7 @@ CORS(app, resources={r"/predict": {"origins": "*"}})
 
 # Load model and tokenizer
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model_path = '../model'
+model_path = '/app/model'
 model = BertForSequenceClassification.from_pretrained(model_path)
 tokenizer = BertTokenizer.from_pretrained(model_path)
 model.to(device)
