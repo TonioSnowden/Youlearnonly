@@ -1,5 +1,7 @@
 # YouLearnOnly - AI-Powered YouTube Content Filter
 
+Chrome extension that filter all the video entertainement you can only load interesting videos.
+
 ## Overview
 YouLearnOnly is a Chrome extension that uses AI to automatically filter YouTube content, allowing only informative videos while blocking entertainment content. The extension helps users stay focused on educational and informative content by analyzing video titles in real-time.
 
